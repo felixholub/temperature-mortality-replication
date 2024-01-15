@@ -11,7 +11,7 @@ The code replicates Figures 2 of the Paper.
 
 ## Installation
 
-1. Clone the repository or download and extract the ZIP-file under the green "Code" button.
+1. Clone the repository or download and extract the ZIP-file under the green "Code" button on the top right.
 2. Keep the code (`*.do`) and data (`*.dta`) in the same folder.
 3. In Stata, execute `prepare.do` OR manually install from SSC: `ssc install reghdfe` and `ssc install coefplot`.
 
