@@ -7,7 +7,7 @@ The data is taken from the paper:
 
 > Barreca, A., Clay, K., Deschenes, O., Greenstone, M., & Shapiro, J. S. (2016). Adapting to Climate Change: The Remarkable Decline in the US Temperature-Mortality Relationship over the Twentieth Century. Journal of Political Economy, 124(1), 105–159. [https://doi.org/10.1086/684582](https://doi.org/10.1086/684582)
 
-The code replicates Figures 2 and 4 of the Paper.
+The code replicates Figures 2 of the Paper.
 
 ## Installation
 
