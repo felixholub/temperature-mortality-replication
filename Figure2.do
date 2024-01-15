@@ -12,16 +12,17 @@
 * ==========================================================================================
 *  Setup
 * ==========================================================================================
-use DATA_1900_2004, clear
+use problemset_data, clear
+* in case this file is not found, Stata is not working in the same directory as this file
+* resolve this by reopening Stata by double-clicking on this do file, or run the
+* following command, specifying the directory where you storew the data for this problem set
+* Example in my case: 
+* cd "C:/Users/holub/Dropbox/Uni/Teaching/Environmental Economics/src/stata_mortality"
 
-* create squared year variable
-gen year2=year^2
-
-* create year-month variable for the calculation of lags and first differences
-gen yearmonth=ym(year, month)
-
-* define the data as a state-month panel, with the variables stfips and yearmonth as the panel id and time id
-xtset stfips yearmonth
+* if you want to understand the structure of the data, try these commands:
+* describe
+* summarize
+* browse
 
 * create lags and first differences of the ten counts of daily average temperature
 forvalues i=1/10 {
@@ -81,4 +82,6 @@ coefplot, keep($lagcoefs) title("1960-2004") name(paneld, replace) $plotoptions
 * ==========================================================================================
 
 graph combine panela panelb panelc paneld, xsize(8) ysize(6) title("Mortality rates and temperature")
+graph export "Figure2.png", replace
+
 

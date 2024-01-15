@@ -12,26 +12,17 @@
 * ==========================================================================================
 *  Setup
 * ==========================================================================================
-use DATA_1900_2004, clear
+use problemset_data, clear
 
 * keep only the years 1960-2004 as there are no AC data for the years before 1960
 keep if year>=1960 & year<=2004
-
-* create squared year variable
-gen year2=year^2
-
-* create year-month variable for the calculation of lags and first differences
-gen yearmonth=ym(year, month)
-
-* define the data as a state-month panel, with the variables stfips and yearmonth as the panel id and time id
-xtset stfips yearmonth
 
 * create interaction terms of temperature bins with the share of households with AC
 forvalues i=1/10 {
 	gen i_b10_`i'=i2_ac*b10_`i'
 }
 
-* create lags and first differences of the ten counts of daily average temperature and the
+* create lags and first differences of the ten counts of daily average temperature and the interactions
 forvalues i=1/10 {
 	gen L1_b10_`i'=L1.b10_`i'
 	gen D1_b10_`i'=D1.b10_`i'
